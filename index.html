@@ -1,0 +1,139 @@
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Home | ProductosAPI</title>
+		<link rel="stylesheet" href="styles.css" />
+	</head>
+	<body>
+		<main>
+			<div>
+				<form id="loginForm" action="/login" method="post">
+					<h1>Formulario de Login</h1>
+					<input
+						type="text"
+						name="name"
+						placeholder="Ingrese su nombre"
+						minlength="0"
+					/>
+					<button>Enviar</button>
+				</form>
+
+				<div id="loggedInComponent" class="hidden">
+					<span id="loggedInMessage">Bienvenido</span>
+
+					<button>Logout</button>
+				</div>
+			</div>
+			<div class="appContainer">
+				<form id="form">
+					<h2>Agregá un producto:</h2>
+					<label for="">
+						Nombre
+						<input
+							id="productNameInput"
+							type="text"
+							name="nombre"
+							placeholder="Ingrese el nombre del producto"
+						/>
+					</label>
+					<label for="">
+						Precio
+						<input
+							id="productPriceInput"
+							type="text"
+							name="precio"
+							placeholder="Ingrese el precio del producto"
+						/>
+					</label>
+
+					<label for="">
+						Thumbnail
+						<input
+							id="productThumbnailInput"
+							type="text"
+							name="thumbnail"
+							placeholder="Ingrese el link de la imagen"
+						/>
+					</label>
+
+					<button
+						type="submit
+			"
+					>
+						Agregar producto
+					</button>
+				</form>
+
+				<div class="chatFormContainer">
+					<h2>Envia un mensaje:</h2>
+					<form id="chatForm">
+						<div class="chatContainer">
+							<input
+								type="email"
+								required
+								id="inputChatEmail"
+								placeholder="Ingrese su email"
+							/>
+							<input
+								type="text"
+								required
+								id="inputChatNombre"
+								placeholder="Ingrese su Nombre"
+							/>
+							<input
+								type="text"
+								required
+								id="inputApellido"
+								placeholder="Ingrese su Apellido"
+							/>
+							<input
+								type="number"
+								min="0"
+								required
+								id="inputChatEdad"
+								placeholder="Ingrese su Edad"
+							/>
+							<input
+								type="text"
+								required
+								id="inputAlias"
+								placeholder="Ingrese su Alias"
+							/>
+						</div>
+						<hr />
+
+						<h3>Central de mensajes:</h3>
+						<div id="mensajes"></div>
+
+						<hr />
+						<input
+							type="text"
+							id="inputChatText"
+							placeholder="Ingrese su menasje"
+						/>
+						<button>Enviar Mensaje</button>
+					</form>
+				</div>
+
+				<div class="productsContainer">
+					<div id="productos">
+						<span class="productTitle pos1">Nombre</span>
+						<span class="productTitle pos2">Precio</span>
+						<span class="productTitle pos3">Foto</span>
+					</div>
+					<div id="productsContainer"></div>
+				</div>
+			</div>
+		</main>
+		<footer>
+			<p class="footerText">
+				Todos los derechos reservados @2022, vista de administrador.
+			</p>
+		</footer>
+		<script src="/socket.io/socket.io.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/normalizr@3.6.1/dist/normalizr.browser.min.js"></script>
+		<script src="index.js"></script>
+	</body>
+</html>
